@@ -40,13 +40,6 @@ jobs:
       env:
         TNAME: R4A
       run: |
-        #cd /opt/rt-n56u/trunk/configs/boards/WR1200JS/
-        #sed -i 's/CONFIG_RAETH_ESW_PORT_WAN=0/CONFIG_RAETH_ESW_PORT_WAN=4/g' kernel-3.4.x.config
-        #sed -i 's/CONFIG_RAETH_ESW_PORT_LAN1=1/CONFIG_RAETH_ESW_PORT_LAN1=3/g' kernel-3.4.x.config
-        #sed -i 's/CONFIG_RAETH_ESW_PORT_LAN2=2/CONFIG_RAETH_ESW_PORT_LAN2=2/g' kernel-3.4.x.config
-        #sed -i 's/CONFIG_RAETH_ESW_PORT_LAN3=3/CONFIG_RAETH_ESW_PORT_LAN3=1/g' kernel-3.4.x.config
-        #sed -i 's/CONFIG_RAETH_ESW_PORT_LAN4=4/CONFIG_RAETH_ESW_PORT_LAN4=0/g' kernel-3.4.x.config
-        #sed -i 's/BOARD_NUM_USB_PORTS=1/BOARD_NUM_USB_PORTS=1/g' board.mk   
         cd /opt/rt-n56u/trunk
         if [ ! -f configs/templates/$TNAME.config ] ; then
         echo "configs/templates/$TNAME.config not found "
