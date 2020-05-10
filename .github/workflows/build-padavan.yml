@@ -32,10 +32,13 @@ jobs:
         pkg-config zlib1g-dev libgmp3-dev libmpc-dev libmpfr-dev libncurses5-dev libltdl-dev gcc-multilib
     - name: Clone source code
       run: |
-        git clone --depth=1 https://github.com/SpaHuang/rt-n56u.git /opt/rt-n56u
+        git clone --depth=1 https://github.com/chongshengB/rt-n56u.git /opt/rt-n56u
+        git clone --depth=1 https://github.com/chongshengB/rt-n56u.git /opt/rt-n56u.bak
         cd /opt/rt-n56u/toolchain-mipsel
         sh dl_toolchain.sh
         mkdir -p /opt/images/
+        cp -r /opt/rt-n56u.bak/trunk/configs/boards/R4A /opt/rt-n56u/trunk/configs/boards
+        cp /opt/rt-n56u/trunk/configs/templates/R4A.config /opt/rt-n56u/trunk/configs/templates
     - name: Build Firmware
       env:
         TNAME: R4A
