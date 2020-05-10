@@ -37,6 +37,7 @@ jobs:
         cd /opt/rt-n56u/toolchain-mipsel
         sh dl_toolchain.sh
         mkdir -p /opt/images/
+        mv /opt/rt-n56u.bak/trunk/configs/boards/R4A/board.* /opt/rt-n56u/trunk/configs/boards/WR1200JS/
         cp /opt/rt-n56u.bak/trunk/configs/templates/R4A.config /opt/rt-n56u/trunk/configs/templates
     - name: Build Firmware
       env:
