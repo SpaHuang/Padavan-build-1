@@ -1,4 +1,6 @@
 #修改TNAME: K2P-5.0 中的K2P-5.0为你需要编译的型号，注意名称要与configs/templates/目录下的名字相同
+#git clone --depth=1 https://github.com/chongshengB/rt-n56u.git /opt/rt-n56u
+#git clone --depth=1 https://github.com/SpaHuang/rt-n56u.git /opt/rt-n56u.bak
 name: Build Padavan
 
 on: 
@@ -32,9 +34,7 @@ jobs:
         pkg-config zlib1g-dev libgmp3-dev libmpc-dev libmpfr-dev libncurses5-dev libltdl-dev gcc-multilib
     - name: Clone source code
       run: |
-#git clone --depth=1 https://github.com/chongshengB/rt-n56u.git /opt/rt-n56u
          git clone --depth=1 https://github.com/hanwckf/rt-n56u.git /opt/rt-n56u
-#git clone --depth=1 https://github.com/SpaHuang/rt-n56u.git /opt/rt-n56u.bak
          git clone --depth=1 https://github.com/hanwckf/rt-n56u.git /opt/rt-n56u.bak
         cd /opt/rt-n56u/toolchain-mipsel
         sh dl_toolchain.sh
